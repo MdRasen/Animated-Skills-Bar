@@ -1,0 +1,199 @@
+/* Project Name: Animated Skills Bar
+Youtube: https://youtube.com/@devRasen
+Copyright: 2023 ©MdRasen */
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
+
+/* General CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom CSS */
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 900px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.container .header-title h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #000;
+}
+
+.header-title .line-break {
+  width: 55%;
+  height: 4px;
+  background: #6c63ff;
+  margin: 0 auto 15px;
+}
+
+.container .skills-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-bar .image {
+  flex-basis: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-bar .image img {
+  width: 400px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.skills-bar .image img:hover {
+  transform: translateY(-5px);
+}
+
+.skills-bar .contents {
+  flex-basis: 65%;
+  width: 100%;
+  padding: 20px 40px 20px 15px;
+}
+
+.contents .skills:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.skills .details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  width: 0;
+  opacity: 0;
+}
+
+.skills .details.html {
+  animation: html-fill 2s forwards;
+}
+
+.skills .details.css {
+  animation: css-fill 2s forwards;
+}
+
+.skills .details.js {
+  animation: js-fill 2s forwards;
+}
+
+.skills .details.jquery {
+  animation: jQuery-fill 2s forwards;
+}
+
+.skills .bar {
+  position: relative;
+  border: 2px solid #6c63ff;
+  border-radius: 20px;
+}
+
+.skills .bar div {
+  position: relative;
+  width: 0;
+  height: 9px;
+  border-radius: 10px;
+  background-color: #6c63ff;
+}
+
+.bar #html-bar {
+  animation: html-fill 2s forwards;
+}
+@keyframes html-fill {
+  100% {
+    width: 90%;
+    opacity: 1;
+  }
+}
+
+.bar #css-bar {
+  animation: css-fill 2s forwards;
+}
+@keyframes css-fill {
+  100% {
+    width: 75%;
+    opacity: 1;
+  }
+}
+
+.bar #js-bar {
+  animation: js-fill 2s forwards;
+}
+@keyframes js-fill {
+  100% {
+    width: 72%;
+    opacity: 1;
+  }
+}
+
+.bar #jQuery-bar {
+  animation: jQuery-fill 2s forwards;
+}
+@keyframes jQuery-fill {
+  100% {
+    width: 58%;
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .skills-bar .image img {
+    width: 330px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    padding: 40px 6%;
+  }
+
+  .container .skills-bar {
+    flex-direction: column;
+  }
+
+  .skills-bar .image,
+  .skills-bar .contents {
+    flex-basis: 100%;
+  }
+
+  .skills-bar .image img {
+    width: 350px;
+  }
+
+  .skills-bar .contents {
+    padding: 0;
+  }
+}
